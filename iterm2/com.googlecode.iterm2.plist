@@ -782,9 +782,9 @@
 		<key>0x6c-0x40000</key>
 		<dict>
 			<key>Action</key>
-			<integer>19</integer>
+			<integer>12</integer>
 			<key>Text</key>
-			<string></string>
+			<string>clear\n</string>
 		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
@@ -993,7 +993,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>638 110 736 424 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>305 220 1016 512 0 0 1440 877 </string>
+	<string>305 236 814 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>600 52 824 657 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
