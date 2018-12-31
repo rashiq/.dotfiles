@@ -995,9 +995,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>638 110 736 424 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>305 323 1018 447 0 0 1440 877 </string>
+	<string>305 416 930 455 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>196 84 824 657 0 0 1440 877 </string>
+	<string>196 42 824 657 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>196 212 762 498 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1946,7 +1946,7 @@
 			<key>Use Cursor Guide</key>
 			<false/>
 			<key>Use Custom Window Title</key>
-			<false/>
+			<true/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
