@@ -10,6 +10,7 @@ brew "jq"
 brew "tree"
 brew "watchman"
 brew "wget"
+brew "pyenv"
 
 cask "android-studio"
 cask "docker"
