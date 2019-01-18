@@ -1011,7 +1011,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>638 110 736 424 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>455 93 814 486 0 0 1440 877 </string>
+	<string>455 109 958 470 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>196 42 832 665 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -2101,6 +2101,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PerformDNSLookups</key>
 	<false/>
 	<key>PointerActions</key>
