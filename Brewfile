@@ -12,6 +12,7 @@ brew "watchman"
 brew "wget"
 brew "pyenv"
 brew "ipython"
+brew "yarn"
 
 cask "android-studio"
 cask "docker"
