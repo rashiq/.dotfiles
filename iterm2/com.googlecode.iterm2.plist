@@ -805,7 +805,7 @@
 		<key>0xf700-0x380000</key>
 		<dict>
 			<key>Action</key>
-			<integer>55</integer>
+			<integer>20</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -1011,7 +1011,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>638 110 736 424 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>455 109 958 470 0 0 1440 877 </string>
+	<string>455 125 814 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>196 42 832 665 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
