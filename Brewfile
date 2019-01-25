@@ -13,6 +13,9 @@ brew "wget"
 brew "pyenv"
 brew "ipython"
 brew "yarn"
+brew "ffmpeg"
+
+tap "caskroom/versions"
 
 cask "android-studio"
 cask "docker"
@@ -23,3 +26,5 @@ cask "ngrok"
 cask "slack"
 cask "spotify"
 cask "sublime-text"
+cask "java8"
+
