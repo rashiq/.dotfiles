@@ -14,6 +14,7 @@ brew "pyenv"
 brew "ipython"
 brew "yarn"
 brew "ffmpeg"
+brew "git-open"
 
 tap "caskroom/versions"
 
