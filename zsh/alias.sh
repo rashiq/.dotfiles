@@ -2,7 +2,7 @@ alias airport="macchanger -r en0"
 alias l="exa -la"
 alias ls="exa"
 alias cat="bat"
-alias brewfile="subl -n ~/.dotfiles/Brewfile"
+alias brewfile="subl -n ~/.dotfiles/brew/Brewfile"
 
 # Create a gif
 movToGif() {
