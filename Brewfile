@@ -15,6 +15,7 @@ brew "ipython"
 brew "yarn"
 brew "ffmpeg"
 brew "git-open"
+brew "nmap"
 
 tap "caskroom/versions"
 
