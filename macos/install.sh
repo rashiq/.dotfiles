@@ -40,5 +40,5 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
-
-
+# Disable automatically rearrange spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
