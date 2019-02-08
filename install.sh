@@ -9,7 +9,6 @@ declare -a CONFIGS=(
   "sublime"
 )
 
-
 for config in "${CONFIGS[@]}"
 do
   echo "Installing $config"
