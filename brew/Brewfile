@@ -30,6 +30,7 @@ cask "spotify"
 cask "sublime-text"
 cask "java8"
 cask "flux"
+cask "caffeine"
 
 tap "caskroom/fonts"
 cask "font-fira-code"
