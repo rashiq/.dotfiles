@@ -187,9 +187,11 @@ prompt_virtualenv() {
 # - am I root
 # - are there background jobs?
 prompt_status() {
-  local symbols="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) $reset_color%"
+  local -a symbols
 
-  prompt_segment black default "$symbols"
+  symbols+="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$reset_color%}"
+
+  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 ## Main prompt
 build_prompt() {

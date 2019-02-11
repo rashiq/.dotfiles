@@ -13,6 +13,5 @@ for config in "${CONFIGS[@]}"
 do
   echo "Installing $config"
   ./$config/install.sh
-  break
 done
 
