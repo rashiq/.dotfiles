@@ -29,4 +29,4 @@ cask "slack"
 cask "spotify"
 cask "sublime-text"
 cask "java8"
-
+cask "caffeine"
