@@ -16,6 +16,8 @@ brew "yarn"
 brew "ffmpeg"
 brew "git-open"
 brew "nmap"
+brew "go"
+brew "autoenv"
 
 tap "caskroom/versions"
 
@@ -32,6 +34,7 @@ cask "java8"
 cask "flux"
 cask "caffeine"
 cask "vlc"
+cask "goland"
 
 tap "caskroom/fonts"
 cask "font-fira-code"

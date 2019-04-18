@@ -1,4 +1,5 @@
-export PATH="~/Library/Python/2.7/bin:$PATH"
+export PATH="${HOME}/Library/Python/2.7/bin:$PATH"
+export PATH=${HOME}/go/bin:$PATH
 
 export EDITOR='subl -n -w'
 export PAGER='less'
