@@ -18,6 +18,9 @@ brew "git-open"
 brew "nmap"
 brew "go"
 brew "autoenv"
+brew "mysql"
+brew "imageoptim-cli"
+brew "mitmproxy"
 
 tap "caskroom/versions"
 
@@ -35,6 +38,8 @@ cask "flux"
 cask "caffeine"
 cask "vlc"
 cask "goland"
+cask "db-browser-for-sqlite"
+
 
 tap "caskroom/fonts"
 cask "font-fira-code"
