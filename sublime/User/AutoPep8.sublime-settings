@@ -1,0 +1,48 @@
+{
+
+    "max-line-length": 79,
+
+    // Do not fix these errors / warnings(e.g. E4, W)
+    "ignore": "E501,E702",
+
+    // Select errors / warnings(e.g. E4, W)
+    "select": "",
+
+    // Number of spaces per indent level
+    "indent-size": 2,
+
+    // Don't look for and apply local config files;
+    // if false, defaults are updated with any config files in the project's root directory.
+    "ignore-local-config": false,
+
+    // Path to a global pep8 config file;
+    // if this file doesnot exist then this is ignored.
+    "global-config": "",
+
+    // Hang closing bracket instead of matching indentation of opening bracket's line.
+    "hang-closing": false,
+
+    // Specifies whether or not format files once they saved.
+    "format_on_save": true,
+
+    // If true - open new output panel with format/preview results.
+    "show_output_panel": true,
+
+    // Format/Preview menu items only appear for views
+    // with syntax from `syntax_list`
+    // value is base filename of the .tmLanguage syntax files
+    "syntax_list": ["Python"],
+
+    // The value shows how deep the plugin should look for *.py files
+    // before disabling "Preview" and "Format" items in the Side Bar "AutoPep8" Context Menu.
+    "file_menu_search_depth": 3, // max depth to search python files
+
+    // If value is false(default)
+    // then formatter doesn't treat absence of bottom empty line as an error
+    // and doesn't try to fix it.
+    "avoid_new_line_in_select_mode": false,
+
+    // For debug purporse only.
+    "debug": false,
+    "logfile": "/tmp/sublimeautopep8.log"
+}
