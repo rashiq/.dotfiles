@@ -3,7 +3,7 @@
     "max-line-length": 79,
 
     // Do not fix these errors / warnings(e.g. E4, W)
-    "ignore": "E501,E702",
+    "ignore": "E501,E702,E701",
 
     // Select errors / warnings(e.g. E4, W)
     "select": "",
