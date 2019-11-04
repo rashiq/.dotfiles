@@ -3,6 +3,7 @@
 	"font_size": 15,
 	"ignored_packages":
 	[
+		"0_package_control_loader",
 		"Vintage"
 	],
 	"material_theme_accent_acid-lime": true,
@@ -12,5 +13,6 @@
 	"tab_size": 2,
 	"theme": "Material Dracula.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	    "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "node_modules"],
 }

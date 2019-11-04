@@ -2,18 +2,27 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"0_package_control_loader"
 	],
 	"installed_packages":
 	[
+		"AutoPEP8",
 		"Babel",
 		"Base16 Color Schemes",
+		"CoffeeAngular Syntax",
 		"Git",
+		"Gitignore",
 		"HTMLBeautify",
-		"JSON Reindent",
+		"JQ Syntax",
+		"JsonTree",
+		"JsPrettier",
 		"Material Theme",
 		"Materialize",
+		"nginx",
 		"Package Control",
+		"Pretty JSON",
 		"rsub",
+		"Smali",
 		"Theme - Freesia",
 		"TypeScript Syntax"
 	]
