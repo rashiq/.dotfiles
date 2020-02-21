@@ -171,6 +171,9 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
+  if [[ $(hostname) == *"dev"* ]]; then
+    prompt_segment red $CURRENT_FG '%m'
+  fi
   prompt_segment blue $CURRENT_FG '%~'
 }
 
