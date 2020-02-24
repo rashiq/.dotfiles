@@ -7,6 +7,7 @@ declare -a CONFIGS=(
   "brew"
   "iterm2"
   "sublime"
+  "keyboard"
 )
 
 for config in "${CONFIGS[@]}"
