@@ -21,6 +21,7 @@ brew "autoenv"
 brew "mysql"
 brew "imageoptim-cli"
 brew "mitmproxy"
+brew "watch"
 
 tap "homebrew/cask-versions"
 
