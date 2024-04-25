@@ -3,11 +3,11 @@ sudo -v
 
 declare -a CONFIGS=(
   "macos"
-  "zsh"
-  "brew"
-  "iterm2"
-  "sublime"
   "keyboard"
+  "zsh"
+  "iterm2"
+  "brew"
+  "sublime"
 )
 
 for config in "${CONFIGS[@]}"
