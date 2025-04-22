@@ -68,6 +68,8 @@ prompt_context() {
 # Git: branch/detached head, dirty status
 prompt_git() {
   (( $+commands[git] )) || return
+  (( $+commands[timeout] )) || return  # Ensure the 'timeout' command exists
+
   if [[ "$(git config --get oh-my-zsh.hide-status 2>/dev/null)" = 1 ]]; then
     return
   fi
@@ -76,12 +78,30 @@ prompt_git() {
     local LC_ALL="" LC_CTYPE="en_US.UTF-8"
     PL_BRANCH_CHAR=$'\ue0a0'         # 
   }
-  local ref dirty mode repo_path
+  local ref dirty mode repo_path git_output
 
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    repo_path=$(git rev-parse --git-dir 2>/dev/null)
-    dirty=$(parse_git_dirty)
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
+  if $(timeout 0.2 git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+    repo_path=$(timeout 0.2 git rev-parse --git-dir 2>/dev/null)
+
+    # Get dirty status with timeout
+    git_output=$(timeout 0.2 git status --porcelain 2>/dev/null)
+    if [[ $? -eq 0 ]]; then
+      if [[ -n "$git_output" ]]; then
+        dirty="●" # Indicate dirty in some way
+      fi
+    fi
+
+    # Get branch/HEAD with timeout
+    git_output=$(timeout 0.2 git symbolic-ref HEAD 2> /dev/null)
+    if [[ $? -eq 0 && -n "$git_output" ]]; then
+      ref=$(echo "$git_output" | sed 's#refs/heads/##')
+    else
+      git_output=$(timeout 0.2 git rev-parse --short HEAD 2> /dev/null)
+      if [[ $? -eq 0 && -n "$git_output" ]]; then
+        ref="➦ $git_output"
+      fi
+    fi
+
     if [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
@@ -96,27 +116,18 @@ prompt_git() {
       mode=" >R>"
     fi
 
-    setopt promptsubst
-    autoload -Uz vcs_info
-
-    zstyle ':vcs_info:*' enable git
-    zstyle ':vcs_info:*' get-revision true
-    zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:*' unstagedstr '●'
-    zstyle ':vcs_info:*' formats ' %u%c'
-    zstyle ':vcs_info:*' actionformats ' %u%c'
-    vcs_info
-    echo -n "${ref/refs\/heads\//$PL_BRANCH_CHAR }${vcs_info_msg_0_%% }${mode}"
+    # We've removed vcs_info to simplify with timeouts.
+    # Consider re-integrating with careful timeout wrapping if needed.
+    echo -n "${ref:-}${dirty:-}${mode:-}"
   fi
 }
 
 prompt_bzr() {
     (( $+commands[bzr] )) || return
     if (bzr status >/dev/null 2>&1); then
-        status_mod=`bzr status | head -n1 | grep "modified" | wc -m`
-        status_all=`bzr status | head -n1 | wc -m`
-        revision=`bzr log | head -n2 | tail -n1 | sed 's/^revno: //'`
+        status_mod=bzr status | head -n1 | grep "modified" | wc -m
+        status_all=bzr status | head -n1 | wc -m
+        revision=bzr log | head -n2 | tail -n1 | sed 's/^revno: //'
         if [[ $status_mod -gt 0 ]] ; then
             prompt_segment yellow black
             echo -n "bzr@"$revision "✚ "
@@ -155,10 +166,10 @@ prompt_hg() {
       st=""
       rev=$(hg id -n 2>/dev/null | sed 's/[^-0-9]//g')
       branch=$(hg id -b 2>/dev/null)
-      if `hg st | grep -q "^\?"`; then
+      if hg st | grep -q "^\?"; then
         prompt_segment red black
         st='±'
-      elif `hg st | grep -q "^[MA]"`; then
+      elif hg st | grep -q "^[MA]"; then
         prompt_segment yellow black
         st='±'
       else
@@ -181,7 +192,7 @@ prompt_dir() {
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
+    prompt_segment blue black "(basename $virtualenv_path)"
   fi
 }
 
@@ -208,4 +219,9 @@ build_prompt() {
   prompt_end
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
+PROMPT='$(build_prompt)'
+
+# Configure the right prompt for interactive shells
+if [[ -n "$PS1" ]]; then
+  PS1="$PROMPT"
+fi
