@@ -116,8 +116,6 @@ prompt_git() {
       mode=" >R>"
     fi
 
-    # We've removed vcs_info to simplify with timeouts.
-    # Consider re-integrating with careful timeout wrapping if needed.
     echo -n "${ref:-}${dirty:-}${mode:-}"
   fi
 }
